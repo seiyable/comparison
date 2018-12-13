@@ -37,7 +37,7 @@ function onAddButtonClicked() {
   span.innerHTML = todo;
   var button = document.createElement('button');
   button.classList.add('done');
-  button.setAttribute('type', button);
+  button.setAttribute('type', 'button');
   button.addEventListener('click', onDoneButtonClicked);
   button.innerHTML = 'DONE!';
   li.appendChild(span);
