@@ -6,9 +6,9 @@ Vue.component('todo-adder', {
     };
   },
   methods: {
-    // called when button is pressed
+    // called when ADD button is clicked
     // fire add-todo event with the new todo string for the parent component
-    onButtonClicked() {
+    onAddButtonClicked() {
       if (!this.newTodo) return;
       this.$emit('add-todo', this.newTodo);
       this.newTodo = '';
@@ -23,7 +23,7 @@ Vue.component('todo-adder', {
       <button
         type="button"
         class="add"
-        @click="onButtonClicked">
+        @click="onAddButtonClicked">
         ADD
       </button>
     </div>`,
@@ -42,7 +42,8 @@ Vue.component('todo-list-item', {
     },
   },
   methods: {
-    onButtonClick() {
+    // called when DONE! button is clicked
+    onDoneButtonClick() {
       this.$emit('done', this.index);
     },
   },
@@ -52,7 +53,7 @@ Vue.component('todo-list-item', {
       <button
         type="button"
         class="done"
-        @click="onButtonClick">
+        @click="onDoneButtonClick">
         DONE!
       </button>
     </li>`,
