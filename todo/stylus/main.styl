@@ -1,3 +1,5 @@
+$gap = 20px
+
 body
   font-family: 'Roboto', sans-serif
 
@@ -16,12 +18,12 @@ section
 
 h1.title
   font-size: 64px
-  margin: 20px 0
+  margin: $gap 0
 
 .add-todo-container
   height: 40px
-  padding: 10px
-  margin-bottom: 20px
+  padding: ($gap / 2)
+  margin-bottom: $gap
   display: flex
   flex-direction: row
   justify-content: center
@@ -32,17 +34,22 @@ h1.title
     height: 100%
     width: 100%
 
-  button
+  button.add
     height: 100%
     width: 80px
-    margin-left: 20px
+    margin-left: $gap
     font-size: 24px
     outline: none
 
 .todo-list-container
-  padding: 20px
+  padding: $gap
   width: 100%
 
   #todo-list
-    li
-      margin-bottom: 10px
+    li.todo-list-item
+      display: flex
+      align-items: center
+      margin-bottom: ($gap / 2)
+
+      button.done
+        margin-left: ($gap * 3 / 4)

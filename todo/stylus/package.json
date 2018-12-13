@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "stylus": "stylus -w main.styl -o main.css",
+    "stylus": "stylus main.styl main.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

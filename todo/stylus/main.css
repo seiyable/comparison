@@ -32,7 +32,7 @@ h1.title {
   height: 100%;
   width: 100%;
 }
-.add-todo-container button {
+.add-todo-container button.add {
   height: 100%;
   width: 80px;
   margin-left: 20px;
@@ -43,6 +43,11 @@ h1.title {
   padding: 20px;
   width: 100%;
 }
-.todo-list-container #todo-list li {
+.todo-list-container #todo-list li.todo-list-item {
+  display: flex;
+  align-items: center;
   margin-bottom: 10px;
+}
+.todo-list-container #todo-list li.todo-list-item button.done {
+  margin-left: 15px;
 }
