@@ -52,6 +52,12 @@ h1.title {
   width: 100%;
 }
 
-#todo-list li {
+#todo-list li.todo-list-item {
+  display: flex;
+  align-items: center;
   margin-bottom: 10px;
+}
+
+#todo-list li.todo-list-item button.done {
+  margin-left: 15px;
 }

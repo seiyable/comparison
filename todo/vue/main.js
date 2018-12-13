@@ -9,6 +9,7 @@ Vue.component('todo-adder', {
     // called when button is pressed
     // fire add-todo event with the new todo string for the parent component
     onButtonClicked() {
+      if (!this.newTodo) return;
       this.$emit('add-todo', this.newTodo);
       this.newTodo = '';
     },
@@ -27,6 +28,35 @@ Vue.component('todo-adder', {
     </div>`,
 });
 
+// define and set todo-list-item component to Vue
+Vue.component('todo-list-item', {
+  props: {
+    todo: {
+      type: String,
+      default: '',
+    },
+    index: {
+      type: Number,
+      required: true,
+    },
+  },
+  methods: {
+    onButtonClick() {
+      this.$emit('done', this.index);
+    },
+  },
+  template: `
+    <li class="todo-list-item">
+      <span>{{ todo }}</span>
+      <button
+        class="done"
+        type="button"
+        @click="onButtonClick">
+        DONE!
+      </button>
+    </li>`,
+});
+
 // define and set todo-list component to Vue
 Vue.component('todo-list', {
   props: {
@@ -35,14 +65,20 @@ Vue.component('todo-list', {
       default: '',
     },
   },
+  methods: {
+    onDone(index) {
+      this.$emit('remove-todo', index);
+    },
+  },
   template: `
     <div class="todo-list-container">
       <ul id="todo-list">
-        <li
+        <todo-list-item
           v-for="(todo, index) in todos"
-          v-key="index">
-          {{ todo }}
-        </li>
+          v-key="index"
+          :todo="todo"
+          :index="index"
+          @done="onDone"/>
       </ul>
     </div>`,
 });
@@ -59,6 +95,11 @@ var app = new Vue({
     addTodo(newTodo) {
       this.todos.push(newTodo);
     },
+    // called when remove-todo event occured
+    // remove the todo at the given index from the list
+    removeTodo(indexToRemove) {
+      this.todos.splice(indexToRemove, 1);
+    },
   },
   template: `
     <main id="todo-app">
@@ -67,7 +108,9 @@ var app = new Vue({
         <todo-adder @add-todo="addTodo"/>
       </section>
       <section class="bottom">
-        <todo-list :todos="todos" />
+        <todo-list
+          :todos="todos"
+          @remove-todo="removeTodo"/>
       </section>
     </main>`,
 });
