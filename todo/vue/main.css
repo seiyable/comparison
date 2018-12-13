@@ -39,7 +39,7 @@ h1.title {
   width: 100%;
 }
 
-.add-todo-container button {
+.add-todo-container button.add {
   height: 100%;
   width: 80px;
   margin-left: 20px;

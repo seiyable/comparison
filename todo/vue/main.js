@@ -22,6 +22,7 @@ Vue.component('todo-adder', {
         v-model="newTodo"/>
       <button
         type="button"
+        class="add"
         @click="onButtonClicked">
         ADD
       </button>
@@ -49,8 +50,8 @@ Vue.component('todo-list-item', {
     <li class="todo-list-item">
       <span>{{ todo }}</span>
       <button
-        class="done"
         type="button"
+        class="done"
         @click="onButtonClick">
         DONE!
       </button>
