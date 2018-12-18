@@ -64,7 +64,7 @@ Vue.component('todo-list', {
   props: {
     todos: {
       type: Array,
-      default: '',
+      default: [],
     },
   },
   methods: {
@@ -77,7 +77,7 @@ Vue.component('todo-list', {
       <ul id="todo-list">
         <todo-list-item
           v-for="(todo, index) in todos"
-          v-key="index"
+          key="index"
           :todo="todo"
           :index="index"
           @done="onDone"/>
