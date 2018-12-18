@@ -21,8 +21,10 @@ export default {
     TodoAdder,
     TodoList,
   },
-  data: {
-    todos: [],
+  data() {
+    return {
+      todos: [],
+    };
   },
   methods: {
     // called when add-todo event occured
@@ -39,29 +41,28 @@ export default {
 };
 </script>
 
-<style>
-body {
-  font-family: 'Roboto', sans-serif;
-}
+<style lang="stylus">
+body
+  font-family: 'Roboto', sans-serif
+</style>
 
-main#todo-app {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
+<style lang="stylus" scoped>
+@import '~@/stylus/variables'
 
-section {
-  width: 50%;
-}
+main#todo-app
+  height: 100vh
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: center
 
-section.top {
-  padding-top: 100px;
-}
+section
+  width: 50%
 
-h1.title {
-  font-size: 64px;
-  margin: 20px 0;
-}
+  &.top
+    padding-top: 100px
+
+h1.title
+  font-size: 64px
+  margin: $gap 0
 </style>
