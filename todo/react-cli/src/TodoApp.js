@@ -1,5 +1,5 @@
 import React from 'react';
-import './TodoApp.css';
+import styles from './TodoApp.module.css';
 import TodoAdder from './components/TodoAdder/TodoAdder';
 import TodoList from './components/TodoList/TodoList';
 
@@ -28,12 +28,12 @@ export default class TodoApp extends React.Component {
   }
   render() {
     return (
-      <main id="todo-app">
-        <section className="top">
-          <h1 className="title">TODOS</h1>
+      <main className={styles.todoApp}>
+        <section className={styles.topSection}>
+          <h1 className={styles.title}>TODOS</h1>
           <TodoAdder addTodo={(newTodo) => this.addTodo(newTodo)}/>
         </section>
-        <section className="bottom">
+        <section>
           <TodoList
             todos={this.state.todos}
             removeTodo={(indexToRemove) => this.removeTodo(indexToRemove)}/>

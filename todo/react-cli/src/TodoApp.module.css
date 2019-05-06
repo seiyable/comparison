@@ -1,4 +1,4 @@
-main#todo-app {
+.todoApp {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -6,15 +6,15 @@ main#todo-app {
   align-items: center;
 }
 
-section {
+.todoApp section {
   width: 50%;
 }
 
-section.top {
+.topSection {
   padding-top: 100px;
 }
 
-h1.title {
+.title {
   font-size: 64px;
   margin: 20px 0;
 }

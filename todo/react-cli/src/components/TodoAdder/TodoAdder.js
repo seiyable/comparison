@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './TodoAdder.module.css';
 
 export default class TodoAdder extends React.Component {
   constructor(props) {
@@ -26,7 +27,7 @@ export default class TodoAdder extends React.Component {
   };
 
   render() {
-    return <div className="add-todo-container">
+    return <div className={styles.addTodoContainer}>
       <input
         type="text"
         id="add-todo-textinput"
@@ -34,7 +35,6 @@ export default class TodoAdder extends React.Component {
         onChange={this.onInputChange}/>
       <button
         type="button"
-        className="add"
         onClick={this.onAddButtonClicked}>
         ADD
       </button>

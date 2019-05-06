@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './TodoListItem.module.css';
 
 export default class TodoListItem extends React.Component {
   constructor(props) {
@@ -6,11 +7,10 @@ export default class TodoListItem extends React.Component {
   }
   render() {
     return (
-      <li className="todo-list-item">
+      <li className={styles.todoListItem}>
         <span>{ this.props.todo }</span>
         <button
           type="button"
-          className="done"
           onClick={() => this.props.removeTodo(this.props.index)}>
           DONE!
         </button>
