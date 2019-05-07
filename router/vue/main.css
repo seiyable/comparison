@@ -1,0 +1,41 @@
+body {
+  font-family: 'Roboto', serif;
+  color: black;
+}
+
+#app, main {
+  height: 100vh;
+}
+
+main.index {
+  background-color: wheat;
+}
+
+main.page-a {
+  background-color: aliceblue;
+}
+
+main.page-b {
+  background-color: lavenderblush;
+}
+
+h1.page-title {
+  font-size: 64px;
+  padding: 20px;
+}
+
+hr {
+  border-color: black;
+  opacity: .3
+}
+
+section.site-tree {
+  padding: 20px;
+}
+
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  color: black;
+}
