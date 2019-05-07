@@ -5,12 +5,12 @@ class Index extends React.Component {
     super(props);
   }
   render() {
-    const myName = 'Hi, I\'m at ' + this.props.path;
+    const myName = 'Hi, I\'m at ' + this.props.location.pathname;
     return (
       <main className="index">
         <PageTitle title={myName} />
         <hr />
-        <SiteTree />
+        <SiteTree currentPath={this.props.location.pathname} />
       </main>
     );
   }
@@ -21,12 +21,12 @@ class PageA extends React.Component {
     super(props);
   }
   render() {
-    const myName = 'Now at ' + this.props.path;
+    const myName = 'Now at ' + this.props.location.pathname;
     return (
       <main className="page-a">
         <PageTitle title={myName} />
         <hr />
-        <SiteTree />
+        <SiteTree currentPath={this.props.location.pathname} />
       </main>
     );
   }
@@ -37,12 +37,12 @@ class PageB extends React.Component {
     super(props);
   }
   render() {
-    const myName = 'This is ' + this.props.path;
+    const myName = 'This is ' + this.props.location.pathname;
     return (
       <main className="page-b">
         <PageTitle title={myName} />
         <hr />
-        <SiteTree currentPath={this.props.path} />
+        <SiteTree currentPath={this.props.location.pathname} />
       </main>
     );
   }
