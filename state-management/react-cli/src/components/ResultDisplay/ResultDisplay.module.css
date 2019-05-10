@@ -1,0 +1,12 @@
+.resultDisplay {
+  height: 400px;
+  background-color: midnightblue;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.number {
+  font-size: 100px;
+}

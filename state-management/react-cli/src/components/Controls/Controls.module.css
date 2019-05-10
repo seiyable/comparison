@@ -1,0 +1,24 @@
+.controls {
+  height: 120px;
+  background-color: lightseagreen;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.bottom {
+  font-size: 14px;
+}
+
+.button {
+  margin: 0 20px;
+}
