@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './TodoApp.module.css';
-import TodoAdder from './components/TodoAdder/TodoAdder';
-import TodoList from './components/TodoList/TodoList';
+import TodoAdder from './components/TodoAdder';
+import TodoList from './components/TodoList';
 
 export default class TodoApp extends React.Component {
   constructor(props) {
@@ -36,7 +36,8 @@ export default class TodoApp extends React.Component {
         <section>
           <TodoList
             todos={this.state.todos}
-            removeTodo={(indexToRemove) => this.removeTodo(indexToRemove)}/>
+            removeTodo={(indexToRemove) => this.removeTodo(indexToRemove)}
+          />
         </section>
       </main>
     );

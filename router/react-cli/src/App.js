@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import {Switch, Route} from 'react-router-dom';
-import Index from './pages/Index/Index';
-import PageA from './pages/PageA/PageA';
-import PageB from './pages/PageB/PageB';
+import Index from './pages/Index';
+import PageA from './pages/PageA';
+import PageB from './pages/PageB';
 
 export default class App extends React.Component {
   render() {

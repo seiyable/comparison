@@ -1,11 +1,8 @@
 import React from 'react';
 import styles from './SiteTree.module.css';
-import SiteTreeNode from '../SiteTreeNode/SiteTreeNode';
+import SiteTreeNode from '../SiteTreeNode';
 
 export default class SiteTree extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <section className={styles.siteTree}>

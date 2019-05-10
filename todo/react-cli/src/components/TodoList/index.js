@@ -1,11 +1,8 @@
 import React from 'react';
 import styles from './TodoList.module.css';
-import TodoListItem from '../TodoListItem/TodoListItem';
+import TodoListItem from '../TodoListItem';
 
 export default class TodoList extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const todos = this.props.todos;
     const todoListItems = todos.map((todo, index) => {

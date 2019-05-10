@@ -1,12 +1,9 @@
 import React from 'react';
 import styles from './PageA.module.css';
-import PageTitle from '../../components/PageTitle/PageTitle';
-import SiteTree from '../../components/SiteTree/SiteTree';
+import PageTitle from '../../components/PageTitle';
+import SiteTree from '../../components/SiteTree';
 
 export default class PageA extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const myName = 'Now at ' + this.props.location.pathname;
     return (

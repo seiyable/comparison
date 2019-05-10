@@ -25,27 +25,26 @@ class TodoAdder extends React.Component {
   };
 
   render() {
-    return <div className="add-todo-container">
-      <input
-        type="text"
-        id="add-todo-textinput"
-        value={this.state.newTodo}
-        onChange={this.onInputChange}/>
-      <button
-        type="button"
-        className="add"
-        onClick={this.onAddButtonClicked}>
-        ADD
-      </button>
-    </div>;
+    return (
+      <div className="add-todo-container">
+        <input
+          type="text"
+          id="add-todo-textinput"
+          value={this.state.newTodo}
+          onChange={this.onInputChange}/>
+        <button
+          type="button"
+          className="add"
+          onClick={this.onAddButtonClicked}>
+          ADD
+        </button>
+      </div>
+    );
   }
 }
 
 // define TodoListItem component
 class TodoListItem extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <li className="todo-list-item">
@@ -63,9 +62,6 @@ class TodoListItem extends React.Component {
 
 // define TodoList component
 class TodoList extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const todos = this.props.todos;
     const todoListItems = todos.map((todo, index) => {
@@ -122,13 +118,13 @@ class TodoApp extends React.Component {
         <section className="bottom">
           <TodoList
             todos={this.state.todos}
-            removeTodo={(indexToRemove) => this.removeTodo(indexToRemove)}/>
+            removeTodo={(indexToRemove) => this.removeTodo(indexToRemove)}
+          />
         </section>
       </main>
     );
   }
 }
-
 
 // render the app
 ReactDOM.render(

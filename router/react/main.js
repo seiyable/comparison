@@ -1,9 +1,6 @@
 const {BrowserRouter, Switch, Route, Link} = window.ReactRouterDOM;
 
 class Index extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const myName = 'Hi, I\'m at ' + this.props.location.pathname;
     return (
@@ -17,9 +14,6 @@ class Index extends React.Component {
 }
 
 class PageA extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const myName = 'Now at ' + this.props.location.pathname;
     return (
@@ -33,9 +27,6 @@ class PageA extends React.Component {
 }
 
 class PageB extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const myName = 'This is ' + this.props.location.pathname;
     return (
@@ -49,9 +40,6 @@ class PageB extends React.Component {
 }
 
 class PageTitle extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <h1 className="page-title">
@@ -62,9 +50,6 @@ class PageTitle extends React.Component {
 }
 
 class SiteTree extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <section className="site-tree">
@@ -88,9 +73,6 @@ class SiteTree extends React.Component {
 }
 
 class SiteTreeNode extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const isCurrentPath = this.props.path === this.props.currentPath;
     const childNodeBullet = this.props.child && <span>├</span>;
