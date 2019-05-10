@@ -1,0 +1,55 @@
+body, #app {
+  height: 100vh;
+  background-color: whitesmoke;
+  font-family: 'Roboto', serif;
+}
+
+#app {
+  position: relative;
+}
+
+main {
+  width: 800px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+section.result-display {
+  height: 400px;
+  background-color: midnightblue;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.result-display .number {
+  font-size: 100px;
+}
+
+section.controls {
+  height: 120px;
+  background-color: lightseagreen;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section.controls .top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+section.controls .bottom {
+  font-size: 14px;
+}
+
+button {
+  margin: 0 20px;
+}
