@@ -1,0 +1,20 @@
+.todoApp {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.todoApp section {
+  width: 50%;
+}
+
+.topSection {
+  padding-top: 100px;
+}
+
+.title {
+  font-size: 64px;
+  margin: 20px 0;
+}

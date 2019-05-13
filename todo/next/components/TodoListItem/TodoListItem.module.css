@@ -1,0 +1,9 @@
+.todoListItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.todoListItem button {
+  margin-left: 15px;
+}
