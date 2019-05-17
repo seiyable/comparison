@@ -3,33 +3,27 @@ import App from '@/App.vue';
 import TodoAdder from '@/components/TodoAdder.vue';
 import TodoList from '@/components/TodoList.vue';
 
-const factory = (values = {}) => {
-  return mount(App, {
-    data: () => ({...values}),
-  });
-};
-
 describe('App.vue', () => {
   it('adds a todo when it receives "add-todo" event from TodoAdder component', () => {
-    const appWrapper = factory({todos: []});
+    const appWrapper = mount(App);
 
     const todoAdderWrapper = appWrapper.find(TodoAdder);
     const newTodo = 'yoga';
     todoAdderWrapper.vm.$emit('add-todo', newTodo);
 
-    const hasNewTodo = appWrapper.vm.todos.includes(newTodo);
-    expect(hasNewTodo).toBeTruthy();
+    expect(appWrapper.vm.todos).toContain(newTodo);
   });
 
   it('removes a todo when it receives "remove-todo" event from TodoList component', () => {
+    const appWrapper = mount(App);
+
     const sampleTodos = ['yoga', 'tax return', 'reply mails'];
-    const appWrapper = factory({todos: [...sampleTodos]});
+    appWrapper.setData({todos: [...sampleTodos]});
 
     const todoListWrapper = appWrapper.find(TodoList);
-    todoListWrapper.vm.$emit('remove-todo', 0);
+    const sampleIndex = 0;
+    todoListWrapper.vm.$emit('remove-todo', sampleIndex);
 
-    const initialNum = sampleTodos.length;
-    const finalNum = appWrapper.vm.todos.length;
-    expect(finalNum).toBe(initialNum - 1);
+    expect(appWrapper.vm.todos).not.toContain(sampleTodos[sampleIndex]);
   });
 });
