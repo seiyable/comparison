@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoListItem renders correctly 1`] = `
+<li
+  class="todo-list-item"
+>
+  <span>
+    yoga
+  </span>
+   
+  <button
+    class="done"
+    type="button"
+  >
+    
+    DONE!
+  
+  </button>
+</li>
+`;

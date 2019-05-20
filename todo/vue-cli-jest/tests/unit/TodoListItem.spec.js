@@ -30,4 +30,14 @@ describe('TodoListItem', () => {
 
     expect(wrapper.emitted()['done']).toBeTruthy();
   });
+
+  it('renders correctly', () => {
+    const sampleTodo = 'yoga';
+    const wrapper = factory({
+      todo: sampleTodo,
+      index: 0,
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
 });
